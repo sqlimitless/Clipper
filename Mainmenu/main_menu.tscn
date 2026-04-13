@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://mic1euev8dcy"]
+
+[ext_resource type="Texture2D" uid="uid://cdon41agogarq" path="res://Mainmenu/bg(ex).jpg" id="1_0hwnc"]
+[ext_resource type="Script" uid="uid://coj4ensbuwpbi" path="res://Mainmenu/main_menu.gd" id="1_c0y68"]
+[ext_resource type="Texture2D" uid="uid://d4d6nhxnd5gl2" path="res://Mainmenu/logo(ex)_1.png" id="3_mi013"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ooqs"]
+atlas = ExtResource("3_mi013")
+region = Rect2(391.846, 39.846294, 609.94855, 278.66663)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0fxb"]
+atlas = ExtResource("3_mi013")
+region = Rect2(505, 320, 380, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi013"]
+atlas = ExtResource("3_mi013")
+region = Rect2(505, 450, 380, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6jwm"]
+atlas = ExtResource("3_mi013")
+region = Rect2(505, 580, 390, 126)
+
+[node name="MainMenu" type="Control" unique_id=15601049]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c0y68")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1723936549]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_0hwnc")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TitleLogo" type="TextureRect" parent="." unique_id=135507375]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -304.5
+offset_right = 304.5
+offset_bottom = 278.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_8ooqs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=407785656]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -190.0
+offset_top = -260.0
+offset_right = 190.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="VBoxContainer" unique_id=717379038]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_v0fxb")
+
+[node name="OptionButton" type="TextureButton" parent="VBoxContainer" unique_id=1675120600]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_mi013")
+
+[node name="QuitButton" type="TextureButton" parent="VBoxContainer" unique_id=919225176]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_w6jwm")
