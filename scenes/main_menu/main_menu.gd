@@ -40,11 +40,11 @@ func setup_button_animation(btn: TextureButton):
 
 # 게임 시작
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://game.tscn")
-	
+	get_tree().change_scene_to_file("res://scenes/game/game.tscn")
+
 # 옵션 메뉴 열기
 func _on_options_pressed():
-	get_tree().change_scene_to_file("res://options.tscn")
+	get_tree().change_scene_to_file("res://scenes/options/options.tscn")
 	
 # 게임 종료
 func _on_quit_pressed():
