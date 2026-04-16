@@ -14,13 +14,15 @@ config/name="Clipper"
 run/main_scene="uid://mic1euev8dcy"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
-[display]
-
-window/stretch/mode="viewport"
-
 [autoload]
 
 GameConstants="*res://scripts/autoload/game_constants.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
