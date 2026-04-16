@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dunwtmm12rvwf"]
+
+[ext_resource type="Script" uid="uid://dmetcbj012pvm" path="res://scenes/world/cloud.gd" id="1_iu2fc"]
+[ext_resource type="Texture2D" uid="uid://ccy0orsbhyep5" path="res://assets/clouds/Clouds_02.png" id="2_iu2fc"]
+
+[node name="Cloud" type="Node2D" unique_id=2137709698]
+script = ExtResource("1_iu2fc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=283638098]
+modulate = Color(1, 1, 1, 0.827451)
+texture = ExtResource("2_iu2fc")
+flip_h = true

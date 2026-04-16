@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 
 window/stretch/mode="viewport"
 
+[autoload]
+
+GameConstants="*res://scripts/autoload/game_constants.gd"
+
 [dotnet]
 
 project/assembly_name="Clipper"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be7jx3n6t312r"
-path="res://.godot/imported/Clouds_08.png-8af339062448734c79ec31ce2d36a484.ctex"
+uid="uid://bccb46w40macr"
+path="res://.godot/imported/BigRedButton_Pressed.png-36131468a69379cd9e76b76085183b62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/decorations/clouds/Clouds_08.png"
-dest_files=["res://.godot/imported/Clouds_08.png-8af339062448734c79ec31ce2d36a484.ctex"]
+source_file="res://assets/ui/UI Elements/UI Elements/Buttons/BigRedButton_Pressed.png"
+dest_files=["res://.godot/imported/BigRedButton_Pressed.png-36131468a69379cd9e76b76085183b62.ctex"]
 
 [params]
 

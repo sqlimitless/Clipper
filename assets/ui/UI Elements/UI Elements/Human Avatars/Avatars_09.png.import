@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4e3rbec7c6k"
-path="res://.godot/imported/Clouds_03.png-99331427ccf44f12661f5776f206ead6.ctex"
+uid="uid://dflq44tivxb2p"
+path="res://.godot/imported/Avatars_09.png-c75ce248be176deda2fcea4c66415e46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/decorations/clouds/Clouds_03.png"
-dest_files=["res://.godot/imported/Clouds_03.png-99331427ccf44f12661f5776f206ead6.ctex"]
+source_file="res://assets/ui/UI Elements/UI Elements/Human Avatars/Avatars_09.png"
+dest_files=["res://.godot/imported/Avatars_09.png-c75ce248be176deda2fcea4c66415e46.ctex"]
 
 [params]
 
