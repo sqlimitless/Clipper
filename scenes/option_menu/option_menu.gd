@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-# 1. 아까 만든 키 지정 씬 연결 변수 추가 (인스펙터에서 tscn 파일을 드래그해서 넣으세요)
 @export var key_line_scene: PackedScene 
 
 # 노드 참조
@@ -36,15 +35,25 @@ func _ready():
 	
 	# 1. 해상도 설정 초기화
 	resolution_option.clear()
+	var default_res_index = 0  # "1280 x 720"의 인덱스
+	var count = 0
+	
 	for res_text in resolutions.keys():
 		resolution_option.add_item(res_text)
+		if res_text == "1280 x 720":
+			default_res_index = count
+		count += 1
+	
+	# 초기 해상도 강제 적용 (1280x720)
+	resolution_option.selected = default_res_index
+	_on_resolution_selected(default_res_index)
 	resolution_option.item_selected.connect(_on_resolution_selected)
 	
 	# 2. 볼륨 설정 초기화
-	var master_bus_idx = AudioServer.get_bus_index("Master")
-	volume_slider.value = db_to_linear(AudioServer.get_bus_volume_db(master_bus_idx))
+	var default_volume = 50
+	volume_slider.value = default_volume
+	_on_volume_changed(default_volume)
 	volume_slider.value_changed.connect(_on_volume_changed)
-	
 	# 3. 키 설정 초기화 
 	_create_key_list()
 	
@@ -73,23 +82,25 @@ func _on_volume_changed(value: float):
 
 # 키 리스트 생성 로직
 func _create_key_list():
-	# 기존 목록 비우기
 	for child in key_list.get_children():
 		child.queue_free()
 	
-	# 씬이 연결되어 있는지 확인 후 생성
 	if key_line_scene:
 		for action in my_keys:
 			var line = key_line_scene.instantiate()
 			key_list.add_child(line)
+			line.add_to_group("remap_buttons")
 			line.setup(action, my_keys[action])
-	else:
-		print("에러: 인스펙터에서 Key Line Scene을 연결해주세요!")
-
-# 초기화 로직 (필요 시 ResetButton에 연결하세요)
-func _on_reset_pressed():
+			
+# 초기화 로직
+func _on_reset_button_pressed():
+	
+	InputMap.load_from_project_settings()
+	
 	_on_resolution_selected(0)
 	resolution_option.selected = 0
-	volume_slider.value = 0.8
-	_on_volume_changed(0.8)
-	_create_key_list()
+	
+	volume_slider.value = 50
+	_on_volume_changed(50)
+	
+	get_tree().call_group("remap_buttons", "_update_button_text")
