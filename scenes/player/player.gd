@@ -12,3 +12,8 @@ func _physics_process(_delta: float) -> void:
 
 	if input_dir.x != 0.0:
 		_sprite.flip_h = input_dir.x < 0.0
+
+	if input_dir != Vector2.ZERO:
+		_sprite.play("Run")
+	else:
+		_sprite.play("Idle")

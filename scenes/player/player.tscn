@@ -13,7 +13,7 @@ script = ExtResource("2_dovo2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=366982659]
 position = Vector2(-1, 29)
 sprite_frames = ExtResource("1_8afob")
-animation = &"Idle"
+animation = &"Run"
 autoplay = "Idle"
 offset = Vector2(0, -26.25)
 
