@@ -20,11 +20,8 @@ GameConstants="*res://scripts/autoload/game_constants.gd"
 
 [display]
 
-<<<<<<< HEAD
 window/size/viewport_width=1280
 window/size/viewport_height=720
-=======
->>>>>>> feat/main-menu
 window/stretch/mode="canvas_items"
 
 [dotnet]
