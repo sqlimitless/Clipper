@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://7itpyjlmkhx0"]
 
 [ext_resource type="Script" uid="uid://dokcbbqms8y4y" path="res://scenes/option_menu/remap_button.gd" id="1_q6hat"]
+[ext_resource type="FontFile" uid="uid://cveky7wkwhugk" path="res://assets/fonts/NeoDunggeunmoPro-Regular.ttf" id="2_2nf1m"]
 
 [node name="remap_button" type="HBoxContainer" unique_id=198217580]
 offset_right = 40.0
@@ -9,6 +10,9 @@ script = ExtResource("1_q6hat")
 
 [node name="ActionLabel" type="Label" parent="." unique_id=1590595961]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2nf1m")
+theme_override_font_sizes/font_size = 16
 
 [node name="Spacer" type="Control" parent="." unique_id=1888732186]
 layout_mode = 2

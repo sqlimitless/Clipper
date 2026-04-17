@@ -2,17 +2,11 @@
 
 [ext_resource type="Script" uid="uid://ckakxc5rvthlj" path="res://scenes/option_menu/option_menu.gd" id="1_crp5d"]
 [ext_resource type="PackedScene" uid="uid://7itpyjlmkhx0" path="res://scenes/option_menu/remap_button.tscn" id="2_mnvf0"]
+[ext_resource type="Texture2D" uid="uid://dd4n5dh5al2g3" path="res://assets/ui/PaperUIKit/PNGs/Backgrounds/BackgroundSettingsMenu.png" id="3_ot3p4"]
+[ext_resource type="FontFile" uid="uid://cveky7wkwhugk" path="res://assets/fonts/NeoDunggeunmoPro-Regular.ttf" id="4_5kee6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crp5d"]
-bg_color = Color(4.7168137e-06, 0.52119225, 0.66958827, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5kee6"]
+texture = ExtResource("3_ot3p4")
 
 [node name="OptionMenu" type="CanvasLayer" unique_id=1658779675]
 process_mode = 3
@@ -32,21 +26,28 @@ offset_right = 250.0
 offset_bottom = 77.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_crp5d")
+theme_override_styles/panel = SubResource("StyleBoxTexture_5kee6")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=717022663]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 70
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1303265043]
 layout_mode = 2
 
 [node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1925313191]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("4_5kee6")
+theme_override_font_sizes/font_size = 20
 text = "OPTION"
 horizontal_alignment = 1
 
@@ -58,6 +59,9 @@ layout_mode = 2
 
 [node name="Resolution" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ResolutionHBox" unique_id=520861189]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_5kee6")
+theme_override_font_sizes/font_size = 20
 text = "Resolution"
 
 [node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ResolutionHBox" unique_id=2086744690]
@@ -72,6 +76,9 @@ layout_mode = 2
 
 [node name="Volume" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VolumeHBox" unique_id=1589831032]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_5kee6")
+theme_override_font_sizes/font_size = 20
 text = "Volume"
 
 [node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/VolumeHBox" unique_id=2076768870]
@@ -89,6 +96,9 @@ layout_mode = 2
 
 [node name="Controls" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1649304347]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_5kee6")
+theme_override_font_sizes/font_size = 20
 text = "Controls"
 
 [node name="KeyList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=715887678]

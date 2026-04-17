@@ -35,18 +35,13 @@ func _ready():
 	
 	# 1. 해상도 설정 초기화
 	resolution_option.clear()
-	var default_res_index = 0  # "1280 x 720"의 인덱스
-	var count = 0
+	var current_res_str = "%d x %d" % [get_window().size.x, get_window().size.y]
 	
 	for res_text in resolutions.keys():
 		resolution_option.add_item(res_text)
-		if res_text == "1280 x 720":
-			default_res_index = count
-		count += 1
-	
-	# 초기 해상도 강제 적용 (1280x720)
-	resolution_option.selected = default_res_index
-	_on_resolution_selected(default_res_index)
+		if res_text == current_res_str:
+			resolution_option.selected = resolution_option.item_count - 1
+
 	resolution_option.item_selected.connect(_on_resolution_selected)
 	
 	# 2. 볼륨 설정 초기화
