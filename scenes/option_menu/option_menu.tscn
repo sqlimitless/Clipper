@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://bfm3x531lla3v"]
+
+[ext_resource type="Script" uid="uid://ckakxc5rvthlj" path="res://scenes/option_menu/option_menu.gd" id="1_crp5d"]
+[ext_resource type="PackedScene" uid="uid://7itpyjlmkhx0" path="res://scenes/option_menu/remap_button.tscn" id="2_mnvf0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crp5d"]
+bg_color = Color(4.7168137e-06, 0.52119225, 0.66958827, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="OptionMenu" type="CanvasLayer" unique_id=1658779675]
+process_mode = 3
+layer = 10
+script = ExtResource("1_crp5d")
+key_line_scene = ExtResource("2_mnvf0")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1090019290]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -77.5
+offset_right = 250.0
+offset_bottom = 77.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_crp5d")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=717022663]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1303265043]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1925313191]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "OPTION"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1574925627]
+layout_mode = 2
+
+[node name="ResolutionHBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=868977845]
+layout_mode = 2
+
+[node name="Resolution" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ResolutionHBox" unique_id=520861189]
+layout_mode = 2
+text = "Resolution"
+
+[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ResolutionHBox" unique_id=2086744690]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ResolutionOption" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/ResolutionHBox" unique_id=13023862]
+layout_mode = 2
+
+[node name="VolumeHBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=785565323]
+layout_mode = 2
+
+[node name="Volume" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VolumeHBox" unique_id=1589831032]
+layout_mode = 2
+text = "Volume"
+
+[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/VolumeHBox" unique_id=2076768870]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VolumeSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/VolumeHBox" unique_id=1129293163]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Spacer2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=571827464]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Controls" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1649304347]
+layout_mode = 2
+text = "Controls"
+
+[node name="KeyList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=715887678]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=375746782]
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1910704475]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "Reset"
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1479845290]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1955010332]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Close"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]

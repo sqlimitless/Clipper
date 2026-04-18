@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b51jdnoc5n03r"]
+
+[ext_resource type="SpriteFrames" uid="uid://dg3yvgv8y5cd6" path="res://scenes/player/player_frames.tres" id="1_8afob"]
+[ext_resource type="Script" uid="uid://c6hhbk133xxk" path="res://scenes/player/player.gd" id="2_dovo2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dovo2"]
+height = 22.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1904213327]
+y_sort_enabled = true
+script = ExtResource("2_dovo2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=366982659]
+position = Vector2(-1, 29)
+sprite_frames = ExtResource("1_8afob")
+animation = &"Run"
+autoplay = "Idle"
+offset = Vector2(0, -26.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=800089947]
+position = Vector2(2, 21)
+shape = SubResource("CapsuleShape2D_dovo2")
