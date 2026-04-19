@@ -1,19 +1,49 @@
 [gd_scene format=3 uid="uid://b51jdnoc5n03r"]
 
 [ext_resource type="SpriteFrames" uid="uid://dg3yvgv8y5cd6" path="res://scenes/player/player_frames.tres" id="1_8afob"]
+[ext_resource type="PackedScene" uid="uid://8nrpd5mam35b" path="res://scenes/arrow/arrow.tscn" id="2_0owmy"]
 [ext_resource type="Script" uid="uid://c6hhbk133xxk" path="res://scenes/player/player.gd" id="2_dovo2"]
+[ext_resource type="Script" uid="uid://daiby4u332uqj" path="res://scripts/components/state_machine.gd" id="3_75vfm"]
+[ext_resource type="Script" path="res://scripts/components/idle_state.gd" id="4_0owmy"]
+[ext_resource type="Script" path="res://scripts/components/run_state.gd" id="5_qek5x"]
+[ext_resource type="Script" uid="uid://basy172c8cbij" path="res://scripts/components/shoot_state.gd" id="6_5gtgg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dovo2"]
 height = 22.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1904213327]
+y_sort_enabled = true
 script = ExtResource("2_dovo2")
+arrow_scene = ExtResource("2_0owmy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=366982659]
+position = Vector2(-1, 29)
 sprite_frames = ExtResource("1_8afob")
-animation = &"Idle"
-autoplay = "Idle"
+animation = &"ArcherShoot"
+autoplay = "ArcherIdle"
+offset = Vector2(0, -26.25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=800089947]
 position = Vector2(2, 21)
 shape = SubResource("CapsuleShape2D_dovo2")
+
+[node name="ArrowSpawn" type="Marker2D" parent="." unique_id=1335123621]
+
+[node name="StateMachine" type="Node" parent="." unique_id=1853944480 node_paths=PackedStringArray("initial_state", "player")]
+script = ExtResource("3_75vfm")
+initial_state = NodePath("IdleState")
+player = NodePath("..")
+
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=1155216017 node_paths=PackedStringArray("run_state", "shoot_state")]
+script = ExtResource("4_0owmy")
+run_state = NodePath("../RunState")
+shoot_state = NodePath("../ShootState")
+
+[node name="RunState" type="Node" parent="StateMachine" unique_id=669852092 node_paths=PackedStringArray("idle_state", "shoot_state")]
+script = ExtResource("5_qek5x")
+idle_state = NodePath("../IdleState")
+shoot_state = NodePath("../ShootState")
+
+[node name="ShootState" type="Node" parent="StateMachine" unique_id=150618439 node_paths=PackedStringArray("idle_state")]
+script = ExtResource("6_5gtgg")
+idle_state = NodePath("../IdleState")

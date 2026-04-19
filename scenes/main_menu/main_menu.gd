@@ -23,3 +23,4 @@ func _on_options_pressed():
 # 게임 종료
 func _on_quit_pressed():
 	get_tree().quit()
+ 

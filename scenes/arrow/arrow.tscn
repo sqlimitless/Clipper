@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://8nrpd5mam35b"]
+
+[ext_resource type="Script" uid="uid://cgimu670qcd8u" path="res://scenes/arrow/arrow.gd" id="1_8e2im"]
+[ext_resource type="Texture2D" uid="uid://c732o823e0qtr" path="res://assets/player/Archer/Arrow.png" id="2_hp5o0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yigju"]
+size = Vector2(5, 4.5)
+
+[node name="Arrow" type="Area2D" unique_id=400877537]
+script = ExtResource("1_8e2im")
+fake_gravity = 100.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1396073407]
+texture = ExtResource("2_hp5o0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=285188834]
+position = Vector2(17, -1)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_yigju")
