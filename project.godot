@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 [autoload]
 
 GameConstants="*res://scripts/autoload/game_constants.gd"
+MCPGameBridge="res://addons/godot_mcp/game_bridge/mcp_game_bridge.gd"
 
 [display]
 
@@ -27,6 +28,13 @@ window/stretch/mode="canvas_items"
 [dotnet]
 
 project/assembly_name="Clipper"
+
+[godot_mcp]
+
+bind_mode=0
+custom_bind_ip=""
+port_override_enabled=false
+port_override=6550
 
 [input]
 
