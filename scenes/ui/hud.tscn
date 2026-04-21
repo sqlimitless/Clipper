@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://dbcyadwptfr6l"]
+
+[ext_resource type="Texture2D" uid="uid://cv5bhu0r4jsew" path="res://assets/ui/UI Elements/UI Elements/Icons/Icon_01.png" id="1_8qguk"]
+[ext_resource type="Texture2D" uid="uid://fwqkpvtmuoeh" path="res://assets/ui/UI Elements/UI Elements/Icons/Icon_05.png" id="2_136eg"]
+[ext_resource type="Texture2D" uid="uid://7tk5p8nrw6lx" path="res://assets/ui/UI Elements/UI Elements/Icons/Icon_06.png" id="3_oj5la"]
+[ext_resource type="Texture2D" uid="uid://bt133by1bkuba" path="res://assets/ui/UI Elements/UI Elements/Icons/Icon_04.png" id="4_gss2c"]
+[ext_resource type="Texture2D" uid="uid://csu6r6pypfrpv" path="res://assets/ui/UI Elements/UI Elements/Bars/SmallBar_Base.png" id="5_oj5la"]
+[ext_resource type="Texture2D" uid="uid://ccetp45mgntx" path="res://assets/ui/UI Elements/UI Elements/Bars/SmallBar_Fill.png" id="6_gss2c"]
+[ext_resource type="Script" uid="uid://cbvdnmr50vaww" path="res://scenes/ui/health_bar.gd" id="7_hpbar"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_leftcap"]
+atlas = ExtResource("5_oj5la")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_middle"]
+atlas = ExtResource("5_oj5la")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rightcap"]
+atlas = ExtResource("5_oj5la")
+region = Rect2(256, 0, 64, 64)
+
+[node name="HUD" type="CanvasLayer" unique_id=1136901022]
+
+[node name="HUDRoot" type="Control" parent="." unique_id=810491860]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BottomLeft" type="MarginContainer" parent="HUDRoot" unique_id=2061970950]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 500.0
+grow_vertical = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUDRoot/BottomLeft" unique_id=625392914]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TextureRect" type="TextureRect" parent="HUDRoot/BottomLeft/HBoxContainer" unique_id=1383258471]
+layout_mode = 2
+texture = ExtResource("1_8qguk")
+
+[node name="TextureRect2" type="TextureRect" parent="HUDRoot/BottomLeft/HBoxContainer" unique_id=1225711099]
+layout_mode = 2
+texture = ExtResource("2_136eg")
+
+[node name="TextureRect3" type="TextureRect" parent="HUDRoot/BottomLeft/HBoxContainer" unique_id=603433029]
+layout_mode = 2
+texture = ExtResource("3_oj5la")
+
+[node name="TextureRect4" type="TextureRect" parent="HUDRoot/BottomLeft/HBoxContainer" unique_id=1727120313]
+layout_mode = 2
+texture = ExtResource("4_gss2c")
+
+[node name="TopLeft" type="MarginContainer" parent="HUDRoot" unique_id=1710299864]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 350.0
+offset_bottom = 84.0
+
+[node name="HealthBar" type="Control" parent="HUDRoot/TopLeft" unique_id=1974802526]
+custom_minimum_size = Vector2(330, 64)
+layout_mode = 2
+script = ExtResource("7_hpbar")
+
+[node name="BaseFrame" type="HBoxContainer" parent="HUDRoot/TopLeft/HealthBar" unique_id=147008990]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="LeftCap" type="TextureRect" parent="HUDRoot/TopLeft/HealthBar/BaseFrame" unique_id=1076522459]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_leftcap")
+expand_mode = 1
+
+[node name="Middle" type="TextureRect" parent="HUDRoot/TopLeft/HealthBar/BaseFrame" unique_id=586326495]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_middle")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="RightCap" type="TextureRect" parent="HUDRoot/TopLeft/HealthBar/BaseFrame" unique_id=1987042020]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_rightcap")
+expand_mode = 1
+
+[node name="FillArea" type="Control" parent="HUDRoot/TopLeft/HealthBar" unique_id=1079998488]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_right = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Fill" type="TextureRect" parent="HUDRoot/TopLeft/HealthBar/FillArea" unique_id=2076633318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_gss2c")
+expand_mode = 1

@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://7c5oupqb1bfh" path="res://assets/clouds/Clouds_07.png" id="11_yygq7"]
 [ext_resource type="Texture2D" uid="uid://be7jx3n6t312r" path="res://assets/clouds/Clouds_08.png" id="12_ro4tp"]
 [ext_resource type="PackedScene" uid="uid://cdfqv684k85wg" path="res://scenes/camera/PlayerCamera.tscn" id="13_x2msd"]
+[ext_resource type="PackedScene" uid="uid://dbcyadwptfr6l" path="res://scenes/ui/hud.tscn" id="14_hud"]
 
 [node name="Stage1" type="Node2D" unique_id=855711131]
 y_sort_enabled = true
@@ -69,3 +70,5 @@ target = NodePath("../Player")
 
 [node name="Projectiles" type="Node2D" parent="." unique_id=758941401]
 y_sort_enabled = true
+
+[node name="HUD" parent="." instance=ExtResource("14_hud")]
