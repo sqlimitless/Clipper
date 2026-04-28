@@ -5,14 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://b51jdnoc5n03r" path="res://scenes/player/player.tscn" id="2_ys2ni"]
 [ext_resource type="PackedScene" uid="uid://dunwtmm12rvwf" path="res://scenes/world/cloud.tscn" id="3_48fdt"]
 [ext_resource type="Script" uid="uid://dth7fydrpl2ic" path="res://scenes/world/clouds.gd" id="4_clouds"]
-[ext_resource type="Texture2D" uid="uid://cyyakt45ihvrb" path="res://assets/clouds/Clouds_01.png" id="5_v3u1i"]
-[ext_resource type="Texture2D" uid="uid://ccy0orsbhyep5" path="res://assets/clouds/Clouds_02.png" id="6_x2msd"]
-[ext_resource type="Texture2D" uid="uid://4e3rbec7c6k" path="res://assets/clouds/Clouds_03.png" id="7_nq7ll"]
-[ext_resource type="Texture2D" uid="uid://dwx1gskywbjfr" path="res://assets/clouds/Clouds_04.png" id="8_frksi"]
-[ext_resource type="Texture2D" uid="uid://gyysvvyoslnb" path="res://assets/clouds/Clouds_05.png" id="9_bylcr"]
-[ext_resource type="Texture2D" uid="uid://crxnja1a4d2o2" path="res://assets/clouds/Clouds_06.png" id="10_4ivhc"]
-[ext_resource type="Texture2D" uid="uid://7c5oupqb1bfh" path="res://assets/clouds/Clouds_07.png" id="11_yygq7"]
-[ext_resource type="Texture2D" uid="uid://be7jx3n6t312r" path="res://assets/clouds/Clouds_08.png" id="12_ro4tp"]
+[ext_resource type="Texture2D" uid="uid://cyyakt45ihvrb" path="res://assets/tilesets/decorations/clouds/Clouds_01.png" id="5_v3u1i"]
+[ext_resource type="Texture2D" uid="uid://ccy0orsbhyep5" path="res://assets/tilesets/decorations/clouds/Clouds_02.png" id="6_x2msd"]
+[ext_resource type="Texture2D" uid="uid://4e3rbec7c6k" path="res://assets/tilesets/decorations/clouds/Clouds_03.png" id="7_nq7ll"]
+[ext_resource type="Texture2D" uid="uid://dwx1gskywbjfr" path="res://assets/tilesets/decorations/clouds/Clouds_04.png" id="8_frksi"]
+[ext_resource type="Texture2D" uid="uid://gyysvvyoslnb" path="res://assets/tilesets/decorations/clouds/Clouds_05.png" id="9_bylcr"]
+[ext_resource type="Texture2D" uid="uid://crxnja1a4d2o2" path="res://assets/tilesets/decorations/clouds/Clouds_06.png" id="10_4ivhc"]
+[ext_resource type="Texture2D" uid="uid://7c5oupqb1bfh" path="res://assets/tilesets/decorations/clouds/Clouds_07.png" id="11_yygq7"]
+[ext_resource type="Texture2D" uid="uid://be7jx3n6t312r" path="res://assets/tilesets/decorations/clouds/Clouds_08.png" id="12_ro4tp"]
 [ext_resource type="PackedScene" uid="uid://cdfqv684k85wg" path="res://scenes/camera/PlayerCamera.tscn" id="13_x2msd"]
 [ext_resource type="PackedScene" uid="uid://dbcyadwptfr6l" path="res://scenes/ui/hud.tscn" id="14_hud"]
 
@@ -71,4 +71,4 @@ target = NodePath("../Player")
 [node name="Projectiles" type="Node2D" parent="." unique_id=758941401]
 y_sort_enabled = true
 
-[node name="HUD" parent="." instance=ExtResource("14_hud")]
+[node name="HUD" parent="." unique_id=689530225 instance=ExtResource("14_hud")]

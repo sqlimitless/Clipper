@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(git mv:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/leehj/Godot/Clipper/assets/ui/UI Elements/UI Elements/Bars/SmallBar_Base.png\" \"/Users/leehj/Godot/Clipper/assets/ui/UI Elements/UI Elements/Bars/SmallBar_Fill.png\" \"/Users/leehj/Godot/Clipper/assets/ui/UI Elements/UI Elements/Bars/BigBar_Base.png\" \"/Users/leehj/Godot/Clipper/assets/ui/UI Elements/UI Elements/Bars/BigBar_Fill.png\")",
+      "Bash(python3)",
+      "Bash(identify \"/Users/leehj/Godot/Clipper/assets/ui/UI Elements/UI Elements/Cursors/Cursor_04.png\")",
+      "Bash(identify \"/Users/leehj/Godot/Clipper/assets/ui/UI Elements/UI Elements/Icons/Icon_01.png\")"
     ]
   }
 }

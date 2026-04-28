@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://csu6r6pypfrpv" path="res://assets/ui/UI Elements/UI Elements/Bars/SmallBar_Base.png" id="5_oj5la"]
 [ext_resource type="Texture2D" uid="uid://ccetp45mgntx" path="res://assets/ui/UI Elements/UI Elements/Bars/SmallBar_Fill.png" id="6_gss2c"]
 [ext_resource type="Script" uid="uid://cbvdnmr50vaww" path="res://scenes/ui/health_bar.gd" id="7_hpbar"]
+[ext_resource type="Texture2D" uid="uid://ck6t2i6lu23xp" path="res://assets/ui/UI Elements/UI Elements/Cursors/Cursor_04.png" id="8_cursor"]
+[ext_resource type="Script" uid="uid://8btjxhvpw4in" path="res://scenes/ui/hud.gd" id="9_hudscript"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_leftcap"]
 atlas = ExtResource("5_oj5la")
@@ -21,6 +23,7 @@ atlas = ExtResource("5_oj5la")
 region = Rect2(256, 0, 64, 64)
 
 [node name="HUD" type="CanvasLayer" unique_id=1136901022]
+script = ExtResource("9_hudscript")
 
 [node name="HUDRoot" type="Control" parent="." unique_id=810491860]
 layout_mode = 3
@@ -59,6 +62,13 @@ texture = ExtResource("3_oj5la")
 [node name="TextureRect4" type="TextureRect" parent="HUDRoot/BottomLeft/HBoxContainer" unique_id=1727120313]
 layout_mode = 2
 texture = ExtResource("4_gss2c")
+
+[node name="Cursor" type="TextureRect" parent="HUDRoot" unique_id=1234567890]
+z_index = 10
+layout_mode = 0
+mouse_filter = 2
+texture = ExtResource("8_cursor")
+expand_mode = 1
 
 [node name="TopLeft" type="MarginContainer" parent="HUDRoot" unique_id=1710299864]
 layout_mode = 1
